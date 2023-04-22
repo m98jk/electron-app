@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' ">
+    <title>TEST </title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body class=" text-center d-flex justify-content-center">
+    <div class="container flex-column p-2 m-2">
+        <div class="py-2">
+            <h2>Electron App to read and write Excel files</h2>
+            Using
+            Node.js <span id="node-version"></span>,
+            Chromium <span id="chrome-version"></span>,
+            XlsxJs <span>4.3</span>,
+            and Electron <span id="electron-version"></span>.
+        </div>
+
+        <form id="listForm" class="mb-2">
+
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="user name" aria-label="user name" name="fname"
+                        id="fname">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="email" aria-label="email" name="email"
+                        id="email">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+
+        </form>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">user name</th>
+                    <th scope="col">email</th>
+                </tr>
+            </thead>
+            <tbody id="xls">
+            </tbody>
+        </table>
+    </div>
+    <div class="fixed-bottom bg-dark "><a href="http://" class="text-white">GitHub : m98jk</a></div>
+    <script src="xlsx.js"></script>
+
+</body>
+
+</html>
