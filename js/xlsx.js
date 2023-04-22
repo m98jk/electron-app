@@ -1,5 +1,6 @@
 const XLSX = require("xlsx");
-const workbook = XLSX.readFile("./db.xlsx");
+const file_name = "./db.xlsx";
+const workbook = XLSX.readFile(file_name);
 const worksheet = workbook.Sheets[workbook.SheetNames[0]];
 //
 function bringFile() {
@@ -27,10 +28,14 @@ function addFormData(event) {
   XLSX.utils.sheet_add_aoa(worksheet, [[fname, email]], {
     origin: rowIndex,
   });
-  XLSX.writeFile(workbook, "db.xlsx");
+  XLSX.writeFile(workbook, file_name);
   bringFile();
   listForm.reset();
 }
 //
-// document.getElementById("hit").addEventListener("click", bringFile);
+document.getElementById("m98jk").addEventListener("click", () => {
+  const { shell } = require("electron");
+
+  shell.openExternal("https://github.com/m98jk/electron-app");
+});
 document.getElementById("listForm").addEventListener("submit", addFormData);
