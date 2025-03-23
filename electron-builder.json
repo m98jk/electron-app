@@ -1,0 +1,9 @@
+{
+    "appId": "com.example.myapp",
+    "productName": "xlsxreader",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  }
+  

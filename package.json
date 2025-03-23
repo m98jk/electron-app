@@ -2,19 +2,27 @@
   "name": "electron_app",
   "version": "1.0.0",
   "description": "",
-  "main": "js/index.js",
+  "main": "js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "m98jk",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^24.1.2"
+    "electron": "^24.1.2",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "exceljs": "^4.3.0",
     "xlsx": "^0.18.5"
+  },
+  "build": {
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
   }
 }

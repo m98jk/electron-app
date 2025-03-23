@@ -10,8 +10,8 @@ function bringFile() {
 
   let view = document.getElementById("xls");
   view.innerHTML = "";
-  columnsAB.forEach((cell) => {
-    view.innerHTML += `<tr><td>${cell.name}</td><td>${cell.email} </td><tr>`;
+  columnsAB.forEach((cell,index) => {
+    view.innerHTML += `<tr><td>${cell.name}</td><td>${cell.email} </td><td><button  onclick="stbadge(${index})">Print</button></td><tr>`;
   });
 }
 //
@@ -39,3 +39,20 @@ document.getElementById("m98jk").addEventListener("click", () => {
   shell.openExternal("https://github.com/m98jk/electron-app");
 });
 document.getElementById("listForm").addEventListener("submit", addFormData);
+
+function makeBadge() {
+  const badge = document.getElementById("badge");
+  const badgeName = "Mohammed Jawad";
+  badge.innerHTML = `<div class="badge"><span>${badgeName}</span></div>`;
+}
+const badges = document.getElementsByClassName("stbadge");
+for (let i = 0; i < badges.length; i++) {
+  badges[i].addEventListener("click", makeBadge);
+  console.log(badges[i]);
+  
+}
+
+function stbadge(id){
+console.log(`Print Badge ${id}`);
+
+}
